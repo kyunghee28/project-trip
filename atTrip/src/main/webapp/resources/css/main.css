@@ -1,0 +1,503 @@
+@charset "UTF-8";
+
+@use postcss-color-function ;
+@use postcss-nested ;
+/*전체 적용 폰트*/ 
+body {	margin: 0;	font-family: Arial, Helvetica, sans-serif; margin: 0; padding: 0;}
+section {	margin-top: 48px; z-index:0px;}
+* {	box-sizing: border-box;}
+a {	text-decoration: none;}
+
+
+/*center 중간 80% 배치*/
+.center {	z-index:0px; margin: auto;	width: 80%;	text-align: center; clear:both;}
+.center h2 { border-top: 2px black solid; padding:10px;	text-align: center;	margin-bottom: 25px; display:inline-block;}
+
+
+/* 메인 추천여행지	*/
+#recommend-sec {margin-bottom: 50px;}
+.recommend-wrapper {column-width:250px; margin: 0;	column-gap: 10px;}
+.recommend-wrapper .city {margin: 0;margin-bottom: 5px;position: relative;}
+
+.city img {	width: 100%;object-fit: cover;height: 230px;}
+
+.city h3 {position: absolute;	padding: 0;	margin: 0;color: white;	font-size: 26px;font-weight: bolder;bottom: 20px;	left: 20px;	text-align: center; text-shadow: 0 0 5px rgba(000, 000, 000, 0.8);}
+.city-text {	position: absolute;	padding: 0;	margin: 0;	color: white;	font-size: 15px;	bottom: 65px;	left: 25px;	opacity: 0;	transition: .5s ease; text-shadow: 0 0 5px rgba(000, 000, 000, 0.8);}
+.city:hover .city-text {	opacity: 1;	background-color: rgba(000, 000, 000, 0.3);}
+.city:hover img {	filter: grayscale(70%);}
+
+
+/*메인 중간 도시 배너*/
+.middle_banner{width: 100%;	height: 300px;}
+.middle_banner img {	object-fit: cover;	width: 100%;	height: 100%;}
+.middle_banner .content {width: 45%;	margin: auto; margin-top:-200px; padding: 10px;text-align: center;	}
+.middle_banner .content h3{color:white; font-size:30px;margin:0;margin-bottom:10px;text-shadow:0 0 5px rgba(000,000,000,1);}
+
+
+/* 데이터 분석 */
+.month {margin: auto; margin-bottom:20px;	text-align: center;}
+.month-btn {display: inline-block;	padding: 3px 5px;margin: 2px 1px;border: none;	border-radius: 5px;	background-color: #E6E6E6;font-size: 15x;	cursor: pointer;color: black;}
+.month-btn:hover {font-weight: bold;color: white;background-color: black;}
+
+/*데이터 분석 그리드 이미지 */
+.grid-container {column-width:250px; margin: 0; padding: 0;	column-gap: 6px;}
+.city-item { margin:0; padding:0;	position: relative; margin-bottom: 6px; overflow:hidden;}
+
+.city-item img {object-fit: cover;	width: 100%;	height: 100%;	vertical-align: middle;  
+transform: scale(1);  -webkit-transform: scale(1);  -moz-transform: scale(1);  -ms-transform: scale(1);  -o-transform: scale(1);
+  transition: all 0.5s ease-in-out;}
+.city-item img:hover {  transform: scale(1.2);  -webkit-transform: scale(1.2); -moz-transform: scale(1.2); -ms-transform: scale(1.2); -o-transform: scale(1.2);}
+.city-item .cityname {	display: inline-block;	position: absolute;	color: white;font-size: 26px;font-weight: bold;top: 10px;left: 10px;	text-shadow: 0 0 5px rgba(000, 000, 000, 0.5);}
+.city-item .like {	display: inline-block;	position: absolute;	color: white;font-size: 16px;	font-weight: bold;	bottom: 10px;	right: 10px;}
+
+
+/*나라 페이지*/
+/*상단 300px 이미지와 H1 제목 */
+.top-img-sect {	width: 100%;	height: 300px;}
+.top-img-sect img {	object-fit: cover;	width: 100%;	height: 100%;}
+.top-img-sect .img_content {z-index:10px; width: 45%;	margin: auto; padding: 10px;position: absolute; top:150px; left:25%;	text-align: center;	background-color: rgba(000, 000, 000, 0.3);}
+.top-img-sect .img_content h1{color:white; font-size:40px;margin:0;margin-bottom:10px;text-shadow:0 0 5px rgba(000,000,000,1);}
+.top-img-sect .img_content p{color:white; font-size:15px;margin:0;text-shadow:0 0 5px rgba(000,000,000,1);}
+
+
+/*나라 정보 Info*/
+.top-info {	margin: 50px 0;}
+/*.info-img {	display: inline-block;	object-fit: cover;	width: 40%;	height: 250px;	border-radius: 10px;}
+*/
+.top-content {	padding: 10px 20px;	display: inline-block;	width: 50%;	text-align: left;	vertical-align: top; margin-bottom:20px; }
+.top-content .info-title{	margin: 0px 0px 20px 10px;	font-family: sans-serif;	font-size: 25px;	font-weight: bold;	color: #151515;	padding: 0px 0px 10px 0px;	border-bottom: 1px solid #D8D8D8;}
+.top-content hr {	display: none;}
+.top-content .content-list {	margin-left: 30px;font-size: 17px;	margin-top: 20px;	color: #6E6E6E;	font-family: sans-serif;	font-weight: bold;}
+.top-content .content-detail {margin-left: 30px;	font-size: 15px;color: #848484;	margin-top: 20px; }
+.country_img{display:inline-block;}
+
+/*나라페이지 도시*/
+.recommend-wrapper-two { margin: 0;}
+.recommend-wrapper-two .city { display:inline-block; width:47%; margin: 0;margin:5px;position: relative;}
+.country-cityname{border-top: 2px black solid; padding:10px;}
+
+/*관광지 좋아요  리스트*/
+#backColor-round{ background-color: #EFF5FB; width:100%; height:140px; border-radius: 100%; overflow:hidden;}
+#backColor-box{background-color: #EFF5FB; width:100%; margin-top: -90px; margin-bottom:-50px;}
+
+.card-list{	column-width:250px; column-gap: 10px; padding-bottom:50px;}
+.card-figure{	display:inline-block;border: 1px solid rgba(0,0,0,0.2);	margin: 0;	margin-bottom: 10px;padding: 7px;	box-shadow: 2px 2px 5px rgba(0,0,0,0.5);}
+.card-figure:hover{border: 1px solid rgba(0,0,0,0.7);}
+.card-figure img{ width: 100%;}
+.card-figure .card-content{border-top:1px solid rgba(0,0,0,0.2);  padding:5px;  margin-top:7px;   position: relative;}
+.card-figure .like{ width: 25px; float: right;}
+.card-figure .hashtag{text-align: right; color: gray; font-size:14px; margin-top:10px;}
+.card-figure .viewname{ color:black; text-align: left; font-weight: bold; font-size: 18px; margin: 5px 0px;}
+.card-figure .text{margin-left:5px; text-align: left; font-size:15px; color:#6E6E6E; }
+
+.heart_btn_list{ font-size:25px; float: right;}
+.heart_btn_fill_list{font-size:25px; color: red; float: right;}
+.heart_btn_list:hover{color: red;}
+.heart_btn_fill_list:hover{color: black;}
+
+
+
+
+/*도시 페이지*/
+/*상단 300px 이미지와 H1 제목 */
+.city-top-sect {	width: 100%;	height: 400px; position:relative;}
+.city-top-sect img {	object-fit: cover;	width: 100%;	height: 100%;}
+.city-top-sect h1{color:white; font-size:40px; margin:0; position:absolute; top:50px; left:50px; text-shadow:0 0 5px rgba(000,000,000,1);}
+.city-top-sect .img_content {	width: 30%;	margin: auto;	padding: 10px;	position: absolute;	top: 35%;	left: 50%;	transform: translate(-50%, -50%);	text-align: center; }
+.city-top-sect .img_content p{color:white; font-size:15px;margin:0;text-shadow:005px rgba(000,000,000,1);}
+
+.city-top-content{ width:75%; height:110px;  position:absolute; top:75%; left:50%; transform: translate(-50%, -50%); color:white;}
+.city-top-content .box{ float:left; width:25%; height:100%; margin:auto;  background-color:rgba(0,0,0,0.5); border-left:1px solid rgba(255,255,255,0.5); border-right:1px solid rgba(255,255,255,0.5); padding:10px; padding-left:30px;}
+.city-top-content #title{ font-weight:bold; font-size:20px; margin-top:10px; margin-bottom:10px;}
+.city-top-content #text{font-size:15px;}
+
+/*도시 중간 설명 이미지 3개*/
+.city_info{	width: 100%;	height: 900px; padding: 0px; margin:30px 0px; }
+.img_sect1{	width: 45%;	height: 500px;  display:inline-block;overflow: hidden;  padding: 0px; margin: 0px -3px 0px -3px}
+.img_sect2{	width: 35%;	height: 500px;  display:inline-block;overflow: hidden;  padding: 0px; margin: 0px -3px 0px -3px}
+.img_sect3{	width: 20%;	height: 500px;  display:inline-block; overflow: hidden;  padding: 0px; margin: 0px -3px 0px -3px;}
+.city_info img { height:100%; object-fit:cover;  }
+.city_text_img {  text-align:left; background-color: rgb(0,0,0);   background-color: rgba(0,0,0, 0.5);   color: white;  font-weight: bold;  font-size: 36px;  border: 10px solid #f1f1f1;  position: absolute;  top: 1190px;  left:250px;  z-index: 2;  width: 60%;  padding: 20px 60px;}
+.city_text_img p{ text-align:left; font-size:18px; margin-top: 40px; font-weight:normal;}
+
+
+/*도시 지도 날씨 탭*/
+.tab-info{ height:320px; width:100%; clear:both; margin-bottom:35px;  }
+.tablink {  color:black; background-color: #D8D8D8; border:5px solid white;  float: left;  border: none;  outline: none;  cursor: pointer;  padding: 14px 16px;  font-size: 17px;  font-weight:bold;  width: 25%;  height:50px;}
+.tablink-blank{  border-bottom: 5px solid black; background-color: white;  float: left;  width: 50%;  height:50px;}
+.tablink:hover {  color: #00b6da;}
+/* Style the tab content (and add height:100% for full page content) */
+.tabcontent { overflow:hidden; display:none; text-align:center;  padding: 10px 20px;  height: 100%; border:5px solid black;}
+#Map {  border:5px solid black; white; color:black; }
+#Weather { border:5px solid black; color:black;}
+.weather_img{	width:230px;	text-align: center;	display: inline-block;}
+.weather_img img{position:relative; width:100%;}
+.weather_img p{padding: 0; margin: 0; margin-top:-20px; font-weight:bold; font-size:20px;}
+.weather_info{	display: inline-block;	padding-top:15px;	vertical-align:top;	text-align: center;	height: 100%;	width:50%;}
+.weather_info #wName{ padding:5px 10px; background-color:#F2F2F2; border-radius:10px; font-size:20px; font-weight: bold;}
+.weather_info #currTemp{font-size: 25px; font-weight: bolder;}
+.weather_info #currTemp span{font-size:70px; font-weight: bolder; }
+.weather_info #maxminTemp{}
+
+
+/*관광지 페이지*/
+.hash-like{ background-color:#E6E6E6; width:100%; text-align:center; padding:5px 0px 3px 0px; }
+.hash-like .top-hashtag{ float:left; margin:0; margin-top:5px; padding:3px 10px; display:inline-block; width:85%; color: #424242; font-size:13px; }
+.hash-like .top-like{ display:inline-block; overflow:hidden; width:100px; padding:3px 10px; border-left: 1px solid gray; }
+.hash-like .like{ float:left; width:23px;}
+.like_tooltiptext{  visibility: hidden;  width: 120px;  background-color: #555;  color: #fff;  font-size:12px;  text-align: center;
+  border-radius: 6px;  padding: 5px;  position: absolute;  z-index: 1;  top: 380px;  right:15px;  opacity: 0;  transition: opacity 0.3s;}
+.like_tooltiptext::after {	content: "";    position: absolute;    bottom: 100%;    left: 50%;    margin-left: -5px;    border-width: 5px;    border-style: solid;    border-color: transparent transparent #555 transparent;}
+.top-like:hover .like_tooltiptext{  visibility: visible;  opacity: 1;}
+
+#heart-btn{font-size:20px; }
+#heart-btn-fill{font-size:20px; color: red; display:none; }
+#like_text{font-size: 16px; font-weight:bold; margin-left: 5px;}
+#heart-btn:hover{color: red;}
+#heart-btn-fill:hover{color: black;}
+
+.view-info {margin: 50px 0;}
+.pv_small_img {	display: inline-block;	object-fit: cover;	width:42%; border-radius: 10px;}
+.pv_small_img img{	overflow:hidden; object-fit: cover;	width: 100%;	height:auto; height:350px;border-radius: 10px;}
+
+.dot_container{	text-align: center; margin:-40px 0px 0px 0px;   }
+.dot{ 	cursor: pointer;height: 18px;width: 18px;margin: 2px;
+		background-color: white;border: 1px solid rgba(000, 000, 000, 0.3);
+		border-radius: 50%;display: inline-block;transition: background-color 0.6s ease;  }
+.dot:hover {background-color: #717171;}
+.dotAtive {background-color:#81DAF5; border: 2px solid rgba(255, 255, 255, 0.6) }
+
+#pvMap{height: 300px; width: 100%;}
+.pv_label{text-align: left; margin: 10px 0px 5px 40px; padding:10px; }
+.pv_detail{width:90%; text-align:left; margin-left:25px; font-size:17px; color:#424242 }
+
+
+
+.top-content {	padding: 10px 20px;	display: inline-block;	width: 55%;	text-align: left;	vertical-align: top; margin-bottom:20px;}
+.top-content .content{ margin-left: 10px;	}
+.top-content .box{	width:100%; margin:25px 0px; }
+.top-content .box .vinfo-title{ font-size: 20px; font-weight: bold; margin: 3px 0px;	}
+.top-content .box .vinfo-text{	font-size:16px; }
+.top-content hr {display: none;}
+
+.review-list{width:100%;}
+.review-list .item{width: 100%; border-top: 1px solid #E6E6E6; border-bottom: 1px solid #E6E6E6; padding:10px;}
+.review-list .item .review-img{display:inline-block; width:30%;}
+.review-list .item .review-img img{width:100%; border-radius:5px; }
+.review-list .item .review-content{ display:inline-block; width:67%; vertical-align:top; text-align:left; margin-left:15px;}
+.review-list .item .review-title{ font-weight: bold; font-size:18px; margin: 5px 0px;}
+.review-list .item .review-text{font-size:15px; margin-left: 10px;}
+
+
+
+/*좋아요 레이어 팝업*/
+#like_popup {  visibility: hidden;  height:150px;  width:150px;  background-color: #F78181;
+ border-radius: 50%;  color: #fff;  text-align: center;  padding: 0px;  position: fixed;  z-index: 30;  top:50%;  left: 50%;  margin : -80px -80px;}
+#like_popup.show {  visibility: visible;  -webkit-animation: fadein 0.3s, fadeout 0.3s 0.7s;  animation: fadein 0.3s, fadeout 0.3s 0.7s;}
+#like_popup.cancel {  background-color: #A4A4A4}
+#like_icon{	font-size:45px;	margin-top: 35px;display: block;}
+#like_text{	margin-top:10px;font-size: 18px;font-weight: bolder;}
+#like_success{	display:inline;}
+#like_cancel{	display:none;}
+#like_info{	margin-top:10px;	font-size: 10px;}
+
+@-webkit-keyframes fadein {  from {opacity: 0;}   to {opacity: 1;}}
+@keyframes fadein {  from { opacity: 0;}  to { opacity: 1;}}
+@-webkit-keyframes fadeout {  from {opacity: 1;}   to {opacity: 0;} }
+@keyframes fadeout {  from { opacity: 1;}  to {opacity: 0;} }
+
+
+
+
+/*마이페이지*/
+/*3개 그룹 버튼*/
+.my-btn{margin: 10px 0px 5px 0px;}
+.my-btn button {  padding: 3px 10px; margin: 1px -1px 1px -1px; border:none; background-color: rgba(255,255,255,0.7);  font-weight:bold; font-size: 15px; cursor: pointer;}
+.my-btn button:hover {  background-color : black;  font-weight: bolder; color:white;}
+.my-btn:after {  content: "";  clear: both;  display: table;}
+.my-btn button:not(:last-child) {  border-right: none; }
+
+.no_list_info{	background-color: rgba(180,180,180,0.1);	border-radius:10px;
+	width:80%;	margin:auto;	text-align:center;	padding: 30px 0px;}
+
+
+/*여행일정*/
+.recommend-wrapper-two .plan-info{ display:inline-block; padding:5px 10px 5px 20px; background-color:rgba(0,0,0,0.1); text-align:left; color:white; font-size:15px; position: absolute; top:20px; left:20px; text-shadow: 0 0 5px rgba(000, 000, 000, 0.8);}
+.city:hover .plan-info{ background-color:rgba(0,0,0,0.5); color:white;  }
+.recommend-wrapper-two #plan-title{ font-size:20px; font-weight:bold; display:block; margin: 5px 0px;}
+
+/*내가 쓴 글 게시판 테이블
+.board-table {  border-collapse: collapse;  width: 100%;}
+.table_top{	background-color: #F2F2F2;	text-align: center;	font-weight: bold;	font-size:18px;}
+.board-table td {  padding: 8px;  text-align: left;  border-bottom: 1px solid #ddd;}
+.board-table tr:hover {background-color:#f5f5f5;}
+*/
+
+
+/*회원가입 페이지*/
+.join-content {	max-width: 600px;	margin: auto;	margin-top: 70px;	margin-bottom: 50px;background: white;	padding: 10px;}
+.join-content .subTitle{font-size:20px;font-weight:bold;color:gray;margin:25px0px20px0px;}
+.join-content .container{padding:16px;}
+.join-content input[type=text],.join-content input[type=password],.join-content input[type=date]{width:100%;padding:13px;margin:5px 0 22px 0;display:inline-block;border:none;background:#E6E6E6;}
+.join-content select{width:100%;padding:10px; height:40px; margin:5px 0 22px 0;display:inline-block;border:none;background:#E6E6E6;}
+.join-content input[type=text]:focus, .join-content input[type=password]:focus,.join-content select:focus,.join-content input[type=date]:focus{background-color:#ddd;outline:none;}
+.join-content hr{border:1px solid #D8D8D8; margin-bottom:25px;}
+.join-content hr.hrdot{border-top:1px dashed #f1f1f1;}
+.join-content input[type=reset],.join-content input[type=submit]{background-color:#377fe5;color:white;font-size:20px;font-weight:bold;padding:14px 20px;margin:8px 0;border:none;cursor:pointer;width:100%;opacity:0.9;}
+.join-content input[type=reset]:hover,.join-content input[type=submit]:hover{opacity:1;}
+.join-content input[type=reset].cancelbtn{padding:14px20px; background-color:#ff8fa7;}
+.join-content input[type=reset].cancelbtn,.join-content input[type=submit].signupbtn{float:left;width:50%;}
+.join-content .clearfix::after{content:"";clear:both;display:table;}
+.join-content #checkBoxAll{	width: 100%;	float: left;	margin-bottom: 30px;}
+.join-content .check_box{  float: left;  width: 130px;  margin: 5px 5px 10px 0px;}
+.join-content .ch_container {  position: relative;  padding : 4px 6px 12px 32px;  margin-buttom : 15px;
+  cursor: pointer;  font-size: 15px;  -webkit-user-select: none;  -moz-user-select: none;  -ms-user-select: none;  user-select: none;}
+.join-content .ch_container input {  position: absolute;  opacity: 0;  cursor: pointer; height: 0;  width: 0;}
+.join-content .checkmark {  position: absolute;  top: 0;  left: 0;  height: 25px;  width: 25px;  background-color: #eee;}
+.join-content .ch_container:hover input ~ .checkmark {  background-color: #ccc;}
+.join-content .ch_container input:checked ~ .checkmark {  background-color: #dfa2db;}
+.join-content .checkmark:after {  content: "";  position: absolute;  display: none;}
+.join-content .ch_container input:checked ~ .checkmark:after {  display: block;}
+.join-content .ch_container .checkmark:after {  left: 9px;  top: 5px;  width: 5px;  height: 10px;
+  border: solid white;  border-width: 0 3px 3px 0;  -webkit-transform: rotate(45deg);  -ms-transform: rotate(45deg);  transform: rotate(45deg);}
+.join-content #privateCheck{float: left;width:100%;	margin-top:20px; }
+
+
+/*일정 만들기 join 이용*/
+#make-plan-form { max-width: 400px;	margin: auto;	margin-top: 120px;	margin-bottom: 50px;background: white;	padding: 10px; }
+
+
+
+/*여행일정계획 날짜 고정바*/
+#planbar-day {	z-index: 100;	overflow: hidden;	background-color: #E6E6E6;	margin: 0;	padding: 0; position: fixed;  top: 70px;  width: 100%;}
+#planbar-center{ width:90%; margin:auto; padding: 9px; text-align: center;}
+#planbar-day ul{ list-style-type: none; display: inline; padding: 0; padding-top:5px; margin:0; }
+#planbar-day ul li{	 display: inline; font-size: 16px; font-weight:bold; color:#333; text-align: center; padding: 13px 15px; margin:10px 0px 5px -6px; text-decoration: none; }
+#planbar-day ul li:hover{	background-color: #333;	color: white;	font-weight: bolder;}
+#planbar-day ul li:active{	background-color: #333;	color: #00b6da;	font-weight: bolder;}
+#planbar-day .savebtn{ text-align:center; margin:-4px 3px; padding: 8px 5px; cursor: pointer; background-color :#A4A4A4; border:none;  font-size: 14px; font-weight:bold; color:white; }
+#planbar-day .savebtn:hover { background-color:#00b6da; color:#333;}
+.sticky-plan {	position: fixed;	top: 70px;	width: 100%;}
+.sticky-plan+center {	padding-top: 130px;}
+
+/*여행일정계획 콘텐츠*/
+.plan-content{	width:100%;	vertical-align: top;}
+.plan-item{	display: inline-block;	float:left;	width:50%;	margin: 0;	padding: 0;	padding-right: 5px;}
+#googleMap{	display: inline-block;float:left;width:48%;	background-color:#f9f9f9;height:700px;max-height: 700px;border-radius:10px;}
+
+.plan-item .list{ padding: 5px;  margin-bottom : 5px;  border: 2px solid black;  border-radius: 10px; 
+      background-color:#f9f9f9; text-align: left;  display: table; max-height: 120px;  }
+.plan-item .list_div_img{	display:table-cell;	width:25%;	margin:0;	padding:0;	padding-right:5px;	text-align: center;}
+.plan-item .list_img{ object-fit:cover;  display:inline;  width:90%;  height:80px;	  margin:0;	  padding:0; margin-bottom: -18px;   }
+
+.plan-item .list_info{	display:table-cell;	margin-left:5px;	width: 75%;	height:auto;	vertical-align: top;}
+.plan-item .plan_addbtn{	width:35px;	height:40px;	margin: 0;	float:right;}
+.plan-item .list_name{	font-weight:bold;	font-size:20px;	width:80%;  margin-top:10px;      }
+.plan-item .list_addr{	display:inline-block; margin-top:5px; font-size:14px;	}
+
+
+
+/*로긴페이지*/
+.loginPage .open-button {  background-color: white;  color: black;  font-weight :bold;  padding: 16px 20px;
+  border: none;  cursor: pointer;  opacity: 0.8;  position: absolute;  top : 70px;  right: 30px;  width: 150px;}
+.loginPage .form-popup {   position:absolute;  top :70px;  right: 20px;  border: 1px solid #f1f1f1;  z-index: 9;}
+.loginPage .form-container {  max-width: 300px;  height:340px;  padding: 10px;  background-color: white;}
+.loginPage .form-container input[type=text], .form-container input[type=password] {
+  width: 270px;  padding: 15px;  margin: 5px 0 22px 0;  border: none;  background: #f1f1f1;}
+.loginPage .form-container input[type=text]:focus, .form-container input[type=password]:focus {
+  background-color: #ddd;  outline: none;}
+.loginPage .form-container .btn {  background-color: #377fe5;  color: white;  font-weight:bold;  font-size:15px;
+  padding: 16px 20px;  border: none;  cursor: pointer;  width: 50%;  margin-bottom:10px;  opacity: 0.8;  float: left;}
+.loginPage .form-container .cancel {  background-color: #ff8fa7;}
+.loginPage .form-container .btn:hover, .open-button:hover {  opacity: 1;}
+.loginPage #con{color: white;	font-size: 20px;	font-weight: bold;	margin:550px 0px 0px 50px;}
+
+
+
+/*메인 검색 결과*/
+.search_result{	z-index:30px;width:60%;height:330px;background-color: white;margin: auto;display: flex;
+		border: 4px solid #F2F2F2;margin-top: 5px;overflow: auto;display:none;}
+.search_info_not{font-size:20px;font-weight:bold; text-align: center;vertical-align: middle;padding-top: 70px;	color:gray;	display:none;}
+.search_info{font-size:20px;font-weight:bold; text-align: center;vertical-align: middle;padding-top: 70px;	color:gray;}
+.search_list{padding: 10px;	}
+.search_item{	font-size:16px;	color:#424242;	font-weight:bold;	margin:2px 0px 0px 5px;	padding: 5px;width: auto;}
+.search_item a{	text-decoration: none;	color: #424242;	cursor: pointer;display:inline-block;width: 100%;}
+.search_item .s_text{text-decoration: none;color: #BDBDBD;font-size:13px;width: 20%;display:inline-block;}
+	
+	
+/* 스크롤바 css width */
+::-webkit-scrollbar {  width: 10px; }
+::-webkit-scrollbar-track { background: #f1f1f1; }
+::-webkit-scrollbar-thumb {  background: #888; }
+::-webkit-scrollbar-thumb:hover { background: #555; }
+
+
+
+/* 반응형 레이아웃 */
+@media screen and (max-width: 800px) {
+	section {	margin-top: 28px;}
+	.center{ margin: auto; width: 95%; text-align:center; }
+	.header-img{height:400px;}
+	.header-img #logo{width:100px;}
+
+
+	/*그리드 이미지*/
+	.grid-container {column-width:150px;}
+	.city-item .cityname{font-size: 22px;top:10px;left:7px;	}
+	.city-item .like{font-size: 13px;bottom:5px;right:5px;}
+	.city-item .like img{width: 13px;}
+	
+	/*메인 중간 도시 배너*/
+	.middle_banner{width: 100%;	height: 200px;}
+	.middle_banner .content { width:80%; margin-top:-150px; }
+	.middle_banner .content h3{font-size:25px;text-shadow:0 0 5px rgba(000,000,000,1);}
+		
+	
+	/*상단 300px 이미지*/
+	.top-img-sect {	height: 250px;	}
+	.top-img-sect .img_content {width: 90%;	padding: 10px; top:110px; left:5%;}
+	.top-img-sect .img_content h1 {	font-size: 25px;margin-top: 10px;}
+
+	/*회원가입*/
+	.join-content{ width: 90%; margin-top: 40px; }
+	
+	/*도시 상단 정보*/
+	.city-top-content{  height:120px;}
+	.city-top-content .box{ padding:10px; }
+	.city-top-content #title{ font-size:17px; margin-top:10px;}
+	.city-top-content #text{font-size:13px;}
+	
+	/*도시 중간 이미지*/
+	.city_text_img { top: 1170px;  left:130px;  z-index: 2;  width: 70%;  padding: 20px 60px;}
+	
+	
+	/*관광지페이지*/
+	.hash-like .top-hashtag{width:75%;}
+	
+	.review-list .item{padding:5px;}
+	.review-list .item .review-img{display:inline-block; width:30%;}
+	.review-list .item .review-content{ width:65%; margin-left:5px;}
+	.review-list .item .review-title{ font-size:14px; margin: 5px 0px;}
+	.review-list .item .review-text{font-size:11px; margin-left: 3px;}
+	.pv_label{text-align: center; margin: 0px 0px 5px 0px;}
+	.like_tooltiptext{top: 315px;}
+	
+	
+	/*도시 날씨 지도 탭*/
+	.city-middle-sect{ margin:20px 0px 30px 0px;  }
+	.tablink { padding: 13px 10px;  font-size: 14px;  height:50px;}
+	
+	/*여행일정 계획 */
+	#planbar-day ul li{	 font-size: 14px; padding: 13px 5px; }
+	#planbar-day .savebtn{padding: 8px 3px; cursor:  }
+	
+	#planbar-center{ width:100%;}
+	#planbar-day { top: 50px; }
+	
+	.plan-item{	width:100%;	padding: 0;}
+	#googleMap{	width:100%;	height:350px;}
+	
+	.plan-item .list_img{ height:90px;   }
+	
+	.plan-item .plan_addbtn{	width:30px;	height:35px;}
+	.plan-item .list_name{	font-size:20px;width:83%; margin-top:15px;  }
+	.plan-item .list_addr{	font-size: 13px;}
+
+
+	/*3개 그룹 버튼*/
+	.my-btn{margin: 10px 0px 5px 0px;}
+	.top-img-sect .img_content .myh1{font-size:23px; margin: 0; }
+	.top-img-sect .img_content .myp{font-size:14px; margin: 0; }
+	.my-btn button {  padding: 3px 5px; margin: 1px -1px 1px -1px; font-size: 15px; cursor: pointer;}
+	
+	/*검색바*/
+	.search_result{width:100%;}
+
+}
+
+
+
+/* 반응형 레이아웃 */
+@media screen and (max-width: 600px) {
+	.center{ margin: auto; width: 95%; text-align:center; }
+	.header-img{height:400px;}
+	.header-img #logo{	width:100px;}
+	
+
+	/*그리드 이미지*/
+	.grid-item {-ms-flex: 50%;	flex: 50%;	max-width: 50%;}
+	.city-item .cityname{font-size: 22px;top:10px;left:7px;	}
+	.city-item .like{font-size: 13px;bottom:5px;right:5px;}
+	.city-item .like img{width: 13px;}
+
+	/*나라페이지*/
+	.info-img {	display: none;	}
+	.top-content {	width: 100%;	margin: 0;	padding: 0;	text-align: center;	}
+	.top-content .info-title {	border: none;	margin-bottom: 10px;}
+	.top-content hr {	display: block;	width: 70px;}
+	.top-content .content-list {font-size: 15px;	margin: 0;	margin-top: 25px;	padding: 0px 10px;	}
+	.top-content .content-detail {	font-size: 14px;	margin: 0;	margin-top: 10px;	padding: 10px 10px;	}
+	
+	.recommend-wrapper-two .city{width: 100%;}
+	
+	
+	/*관광지 리스트*/
+	.card-list{column-width:200px; column-gap: 5px;}
+	.card-figure .hashtag{font-size:11px; margin-top:7px;}
+	.card-figure .viewname{font-size: 16px; margin: 5px 0px;}
+	.card-figure .text{margin-left:3px; font-size:13px;}
+	#heart_btn_list{  font-size:20px; }
+	#heart_btn_fill_list{font-size:20px; }
+	#like_text{font-size: 15px; }
+	.pv_detail.pv_detail{width:100%; margin-left:5px; font-size:19px; }
+	
+	/*도시 상단 정보*/
+	.city-top-sect h1{font-size:30px;top:30px;}
+	.city-top-sect {height: 300px; text-align:center;}
+	.city-top-content{  height:80px; top:55%;}
+	.city-top-content .box{ padding:5px; width:50%; border-bottom:1px solid rgba(255,255,255,0.5);}
+	.city-top-content #title{ font-size:15px; margin-top:5px;}
+	.city-top-content #text{font-size:11px;}
+	
+	/*도시 중간 설명 이미지 3개*/
+	.city_info{	width: 100%;	height: 700px; padding: 0px; margin:30px 0px; }
+	.img_sect1{	width: 100%;	height: 200px;  display:block;overflow: hidden;  padding: 0px; margin: 3px;}
+	.img_sect2{	width: 67%;	height: 250px;  display:inline-block;overflow: hidden;  padding: 0px; margin: 3px;}
+	.img_sect3{	width: 30%;	height: 250px;  display:inline-block; overflow: hidden;  padding: 0px; margin: 3px -2px 3px 0px;}
+	.city_info img { width:100%; object-fit:cover;  }
+	.city_text_img { text-align:left; font-size: 28px;  border: 8px solid #f1f1f1;  position: absolute;  top: 1050px;  left: 35px;  z-index: 2;  width: 80%;  padding: 15px 20px;}
+	.city_text_img p{text-align:left; font-size:14px; margin-top: 30px; font-weight:normal;}
+	
+	/*도시 중간 지도, 날씨 탭 영역*/
+	.weather_img{width:200px; display:inline-block; text-align: center; margin-top: -10px;}
+	.weather_img p{font-size:15px;}
+	.weather_info{width:100%; }
+	.weather_info #wName{font-size:13px; display: inline-block; padding:5px;}
+	.weather_info #currTemp{ margin:0px 8px; font-size: 18px; display: inline-block;}
+	.weather_info #currTemp span{font-size:40px;}
+	.weather_info #maxminTemp{font-size:13px;display: inline-block;}
+	
+	/*관광지페이지*/
+	.hash-like .top-hashtag{width:70%;}
+	.top-content .box .vinfo-title{ font-size: 17px;	}
+	.top-content .box .vinfo-text{	font-size:15px; }
+	.view-info .pv_small_img{width: 100%;}
+	
+	/*회원가입*/
+	.join-content .check_box{ width: 115px;  margin: 5px 5px 10px 0px;}
+	.join-content .ch_container { padding :3px 4px 8px 25px; margin-buttom : 15px;font-size: 14px;}
+	.join-content .checkmark {  top: 0;  left: 0;  height: 20px;  width: 20px;  background-color: #eee;}
+	
+	
+	/*검색바*/
+	.search_result{width:100%;}
+
+}
+
+
+@media screen and (max-width: 450px) {
+		/*관광지*/
+	.card-list{column-width:135px; column-gap: 5px;}
+	.hash-like .top-hashtag{width:68%;}
+	.hash-like .top-like{width:95px;}
+}

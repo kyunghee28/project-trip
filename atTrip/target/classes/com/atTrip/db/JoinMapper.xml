@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="join">
+<insert id="new">
+	insert into member 
+	values ((select nvl(max(m_no),0) from member)+1,#{m_email},#{m_pwd},#{m_interest},#{m_style})
+</insert>
+
+<!-- 아이디 중복검사 -->
+<select id="checkId" resultType="java.lang.Integer">
+	select count(*) from member where m_email=#{m_email}	
+</select>
+
+<!-- 체크박스 나라이름 -->
+<select id="checkCity" resultType="cityVo">
+	select city_name_kor from city order by city_name_kor
+</select>
+</mapper>

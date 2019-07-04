@@ -1,0 +1,135 @@
+@charset "UTF-8";
+
+<link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.7.0/css/all.css' integrity='sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ' crossorigin='anonymous'>
+
+
+/*섹션 네비바 빈칸*/
+body{ 	margin: 0; }
+
+section{	margin-top : 70px;  }
+*{box-sizing: border-box;}
+
+/*Top 버튼*/
+#top-btn {  display:none; z-index: 100;  position: fixed;  bottom: 20px;  right: 15px;   font-size: 15px;  border: none;  
+	outline: none;  background-color: black;  color: white;  cursor: pointer;  padding: 5px 7px;  border-radius: 5px;}
+#top-btn:hover {  background-color: #00b6da; }
+
+
+/*헤더*/
+.topnav { z-index:180; overflow: hidden;  position: fixed;  top: 0;  width: 100%;  background-color: #333; }
+
+.logo-top{ float: left; vertical-align: middle; margin:15px 5px 15px 10px; width:110px; height:40px; }
+.logo-top img{ width:100%;}
+.logo-topM{ display:none;  float: left;  margin:8px 5px 8px 10px; width:38px; height:38px;}
+.logo-topM img{ width:100%;}
+
+/*로그인 회원가입 헤더 로고*/
+.logo-login{	margin:15px 5px 15px 10px; width:110px; height:40px;}
+.logo-login img{ width:100%;}
+
+/*상단 검색 필드*/
+.topnav .search_input{ float:left; box-sizing: border-box; width: 13%; margin :20px 0px 20px 20px; padding: 5px 10px 5px 10px;
+  border: none; border-bottom: 2px solid #00b6da; background-color: rgba( 255, 255, 255, 0 );
+  font-size: 15px; color : white; -webkit-transition: width 0.4s ease-in-out; transition: width 0.4s ease-in-out; }
+.topnav .search_input:focus { width: 23%; background-color: rgba( 255, 255, 255,0); }
+
+.topnav .search-bnt{ float:left; box-sizing: border-box; overflow: hidden; cursor:pointer; margin-top :15px; padding: 0px; border: none;
+	background-color: rgba( 255, 255, 255, 0 ); background-color: Transparent; background-repeat:no-repeat; }
+.topnav .search-bnt:focus{ outline:0 !important; background-color: white; border-radius: 50%; }
+.topnav #search-img{ float:left; width:35px; margin :0px; padding: 0px; cursor:pointer; }
+
+header button:focus { outline:0 !important;  }
+header input:focus, a:focus { outline:0 !important; }
+
+
+.topnav-right { float: right; }
+
+#menu_icon{	color: white; font-size: 28px; padding: 18px 20px; cursor: pointer; vertical-align: middle;}
+#menu_icon:hover{color: #00b6da; }
+
+/*네비바 검색 결과*/
+.nav_search_re{	z-index:180;width:60%;height:330px;background-color: white; position:fixed; left:145px; top:52px;
+		border: 2px solid #00b6da; overflow: auto; display:none;}
+
+
+/*슬라이드 메뉴*/
+.sidepanel  { z-index: 200; position: fixed; top: 0; right : 0; overflow: hidden; padding-top: 60px; width: 0; height: 100%; background-color: #111; transition: 0.5s; }
+.sidepanel .s-a { display: block; padding: 8px 8px 8px 32px; text-decoration: none; font-size: 20px; color: #818181; transition: 0.3s; }
+.sidepanel .s-a:hover { color: #f1f1f1; font-weight: bold; }
+.sidepanel .closebtn { position: absolute; top: 0; right: 25px; font-size: 36px; display: block; padding: 8px 8px 8px 32px; text-decoration: none; color: #818181; transition: 0.3s; }
+.sidepanel .closebtn:hover { color: #f1f1f1; font-weight: bold; }
+.sidepanel-bnt{	display:inline; padding: 5px; margin:1px; border: none; background-color: #8C8C8C;
+	font-size:22x; 	width:80px; cursor: pointer; color: black; font-weight: bold;}
+.sidepanel-bnt:hover{ font-weight:bold; color:white; background:#964BDC }
+
+.sidepanel .before-login{ width: 100%; margin: auto; padding: 0; text-align: center;}
+.sidepanel .before-login a{ text-decoration:none; }
+
+#login-hr{ width: 70%; border: 1px solid #424242; }
+.logout{margin-left: 100px; margin-top: 15px;}
+.sidepanel-bnt-a{ display:block; font-size:13x; cursor: pointer; color: black; padding: 3px; margin:1px; border: none; background-color: #8C8C8C; font-size:15x; width:40%; margin:auto; margin-top:5px; }
+.sidepanel-bnt-a:hover{ font-weight:bold; color:white; background:#964BDC }
+
+
+/*로그인 처리*/
+.before-login{}
+.after-login{display: none;}
+
+
+
+/*슬라이드 메뉴 최근 목록*/
+.sidepanel a {text-decoration: none;}
+.sidepanel p { display: block; padding: 20px 8px 8px 32px; font-size: 15px; font-weight: bold; color: #818181; }
+.recent-col{ width:45%; height:110px;margin:3px; padding:0; float: left;text-align: center;}
+.sidepanel .row{ margin-left:12px}
+.sidepanel .row:after{ content:""; display: table; clear:both;  }
+.recent-col span{ width: 100%; color: white; font-size: 13px;}
+.sidepanel img { width : 100%; height:90px; display: block; transition: 0.3s; }
+.sidepanel .recent-col:hover { border: 1px solid white; }
+
+
+/*반응형 웹을 위한 css*/
+@media screen and (max-width: 800px) {
+	.topnav .search_input{ width: 25%; }
+	.topnav .search_input:focus { width: 40%; }
+	.logo-top{ display: none;}
+	.logo-topM{ display: inline-block;}
+	.sidepanel-bnt{	display:block; font-size:25x; width:60%; margin:auto; margin-top:5px; padding: 10px; font-weight: bold; } 
+	
+	/*모바일용 네비바 높이 줄이기*/
+	section{	margin-top : 50px;  }
+	.topnav {height:50px;}
+	.topnav .search_input{margin :8px 0px 10px 20px;}
+	.topnav .search-bnt{ margin-top :8px; }
+	.topnav #search-img{ width:30px; }
+	#menu_icon{	color: white; font-size: 25px; padding: 12px; cursor: pointer; vertical-align: middle;}
+	
+	/*네이바 검색 결과*/
+	.nav_search_re{	width:80%;height:300px;left:72px; top:40px}
+}
+
+@media screen and (max-width: 600px) {
+	.topnav .search_input{ width: 25%; }
+	.topnav .search_input:focus { width: 40%; }
+	.logo-top{ display: none;}
+	.logo-topM{ display: inline-block;}
+	.sidepanel-bnt{	display:block; font-size:15x; width:60%; margin:auto; margin-top:5px; } 
+
+}
+
+
+
+/*하단 footer */
+footer{	clear:both; margin:0px; margin-top:50px; border:0px; width:100%; height:450px; background-color: #F2F2F2; }
+footer .footer-center{ display: block; margin-left: auto; margin-right: auto; width: 70%; }
+
+.menu-footer{ display: block; padding-top:40px; padding-bottom:20px; }
+.list-footer{ margin-left: auto; margin-right: auto; margin-bottom:10px; display: block; text-align: center; }
+.list-footer ul{ list-style-type: none; display: inline; padding: 0; color: #2E2E2E; }
+.list-footer ul li{	display: inline; margin: 5px; font-size: 20px; font-weight:bolder; }
+.list-footer a { width:50%; margin:5px; text-decoration: none; font-size: 15px; color: #6E6E6E; transition: 0.3s; }
+.list-footer a:hover { color: #00b6da; font-weight: bold; }
+
+.logo-footer{ display: block; margin : 30px auto 0px auto; width:150px; }
+footer p{font-size: 12px; color: gray; text-align: center;}
+

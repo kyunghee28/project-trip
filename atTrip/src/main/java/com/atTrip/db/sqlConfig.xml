@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+  PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+	<properties resource="com/atTrip/db/db_properties"/>
+	<typeAliases>
+		<typeAlias type="com.atTrip.vo.CountryVo" alias="countryVo"/>
+		<typeAlias type="com.atTrip.vo.CityVo" alias="cityVo"/>
+		<typeAlias type="com.atTrip.vo.PointviewVo" alias="pointviewVo"/>
+		<typeAlias type="com.atTrip.vo.LikeVo" alias="likeVo"/>
+		<typeAlias type="com.atTrip.vo.JoinVo" alias="joinvo"/>
+		<typeAlias type="com.atTrip.vo.BoardVo" alias="boardVo"/>
+		<typeAlias type="com.atTrip.vo.PlanVo" alias="planVo"/>
+		<typeAlias type="com.atTrip.vo.PlanNoteVo" alias="planNoteVo"/>
+		<typeAlias type="com.atTrip.vo.BoardVo" alias="boardVo"/>
+		<typeAlias type="com.atTrip.vo.CommentVo" alias="commentVo"/>
+		<typeAlias type="com.atTrip.vo.MemberVo" alias="memberVo"/>
+	</typeAliases>
+  <environments default="development">
+    <environment id="development">
+      <transactionManager type="JDBC"/>
+      <dataSource type="POOLED">
+        <property name="driver" value="${driver}"/>
+        <property name="url" value="${url}"/>
+        <property name="username" value="${user}"/>
+        <property name="password" value="${pwd}"/>
+      </dataSource>
+    </environment>
+  </environments>
+  <mappers>
+    <mapper resource="com/atTrip/db/triplistMapper.xml"/>
+    <mapper resource="com/atTrip/db/likeMapper.xml"/>
+    <mapper resource="com/atTrip/db/JoinMapper.xml"/>
+    <mapper resource="com/atTrip/db/LoginMapper.xml"/>
+    <mapper resource="com/atTrip/db/mypageMapper.xml"/>
+    <mapper resource="com/atTrip/db/PlanMapper.xml"/>
+    <mapper resource="com/atTrip/db/boardMapper.xml"/>
+    <mapper resource="com/atTrip/db/commentMapper.xml"/>
+  </mappers>
+</configuration>

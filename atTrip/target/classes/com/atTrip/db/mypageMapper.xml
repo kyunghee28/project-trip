@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="my">
+	<select id="board" resultType="boardVo">
+		select * from board where m_no=#{m_no} order by b_no desc
+	</select>
+	<select id="like" resultType="likeVo">
+		select * from l_like where m_no=#{m_no}
+	</select>
+	<select id="plan" resultType="planVo" parameterType="java.lang.Integer">
+		select * from plan where m_no=#{m_no}
+	</select>
+</mapper>
